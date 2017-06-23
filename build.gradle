@@ -19,8 +19,12 @@ sourceCompatibility = 1.7
 targetCompatibility = 1.7
 
 dependencies {
-    compile  "org.embulk:embulk-core:0.8.23"
-    provided "org.embulk:embulk-core:0.8.23"
+    compile  "org.embulk:embulk-core:0.8.25"
+    provided "org.embulk:embulk-core:0.8.25"
+    // https://github.com/embulk/embulk/blob/v0.8.25/embulk-core/build.gradle#L41
+    // embulk uses org.msgpack:msgpack-core:0.8.11
+    // diff is https://github.com/msgpack/msgpack-java/compare/0.8.11...0.8.12
+    compile "org.msgpack:msgpack-core:0.8.12"
     // compile "YOUR_JAR_DEPENDENCY_GROUP:YOUR_JAR_DEPENDENCY_MODULE:YOUR_JAR_DEPENDENCY_VERSION"
     testCompile "junit:junit:4.+"
 }
